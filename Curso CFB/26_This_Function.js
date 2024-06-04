@@ -2,7 +2,7 @@ function aluno(nome, nota) {
     this.nome = nome;    //Para diferenciar usa o This.nome = variavel que recebe o nome do parametro
     this.nota = nota;
 
-    //this.dados_anonimo = function () {  // Com a nova instancia não tem o nome e o nota pois passa 
+    //this.dados_anonimo = function () {  // Com a nova instancia não tem o nome e o nota aqui pois passa 
     //   setTimeout(function () {        // Pra um novo bloco de notas
     //      this.nome = nome;   // Resolvendo reatribuindo
     //      this.nota = nota; 

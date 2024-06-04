@@ -1,6 +1,6 @@
 const soma = (...valores) => {
     const somar = val => {  // Criamos uma função que soma e
-        let res = 0;        // return uma soma
+        let res = 0;        // return uma função soma
         for (v of val)
             res += v
         return res

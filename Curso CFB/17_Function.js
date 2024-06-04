@@ -1,5 +1,5 @@
 // Funções basicamente execulta um bloco de comando que eu execulto em um certo momento
-// função nome (parametro){bloco de codigos}   obs:  se não tiver parametros anre e fecha parenteses()
+// função nome (parametro){bloco de codigos}   obs:  se não tiver parametros abre e fecha parenteses()
 
 function nome(nome) {   // ou nome() sem parametros
     console.log(nome);  // Cuidado com o tipo de dados

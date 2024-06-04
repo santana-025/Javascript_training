@@ -10,10 +10,10 @@ const msg = () => {
 
 const pegando_div = document.querySelector("#c1")
 // addEventListener(evento, função) 
-// pegando_div.addEventListener("click", msg)
+// pegando_div.addEventListener("click", msg) ou
 // pegando_div.addEventListener("click", (evento) => {
 //     msg()
-//     pegando quem clicou
+//    // pegando quem clicou
 //     const pegando_quem_clicou = evento.target
 //     console.log(pegando_quem_clicou)
 // })

@@ -1,8 +1,8 @@
 // console.log("Olá Mundo");
 
 // Formas para criação de nomes de variaveis
-//SnakeCase = nome_Jorge
-//CamelCase = nomeJorge
+// SnakeCase = nome_Jorge
+// CamelCase = nomeJorge
 
 "use strict"// Modo Estrito Algumas linguagem so funciona nesse modo
 nome = "Jorge"; // no modo Restrito funciona normal (tem varias outras vantagens)
@@ -32,7 +32,7 @@ mudar conteudo  : sim, Sempre que quiser
 
 const           = Uso Local , Funciona no bloco de codigo que está, e os que foram criados denrtro dele 
 icada           : Não
-redeclaravel    : Não'
+redeclaravel    : Não
 mudar conteudo  : Não
 */
 
@@ -43,4 +43,4 @@ function textevariaveis() {
     }
     console.log(`Aqui funciona se for o let e o const for declarado daqui pra frete`)
 }
-console.log("Aqui está fora do texte nome não existe")
+console.log("Aqui está fora do teste nome não existe")

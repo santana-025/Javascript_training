@@ -1,5 +1,5 @@
 // Ela gera alguma coisa e retorna e o resto é na proxima chamada
-function* cores() { // * indica que é Geradora
+function* cores() {  // * indica que é Geradora
     yield "Vermelho" // é como se fosse um return.
     yield "Verde"
     yield "Azul"

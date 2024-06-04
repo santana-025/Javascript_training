@@ -16,7 +16,7 @@ let el = document.getElementsByTagName("div")
 el = [...el]
 el.map((elemento, i) => {
     //elemento.innerHTML = "Jhonn" podemos mudar o texto de todos
-    console.log(elemento.innerHTML); // Return todas os elementos 
+    console.log(elemento.innerHTML); // Return o texto de todos os elementos 
 })
 
 // 2 maneira 

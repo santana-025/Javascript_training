@@ -10,7 +10,7 @@ console.log(num1 + num2); // 5             (Soma)
 console.log(num1 - num2); // 1             (Subtração)
 console.log(num1 * num2); // 6             (multiplicação)
 console.log(num1 / num2); // 5             (Divisão)
-console.log(num1 % 2);    // 1             (Resto da divisão)
+console.log(num1 % 2);    // 1             (Resto inteiro da divisão)
 
 // Ordem de procedencia Procedencia        ( (), *, /, %, +, - )
 num1 = 3;                    //( vale para os outros operadores)
