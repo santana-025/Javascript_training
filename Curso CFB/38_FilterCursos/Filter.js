@@ -4,12 +4,19 @@ const c1_2 = document.querySelector("#c1_2");
 const cursos = ["HTML", "CSS", "Javascript", "PHP", "React", "MySQL", "ReactNative"]
 const btnCursoSelecionado = document.getElementById("btnCursoSelecionado")
 const btnRemoverCurso = document.getElementById("btnRemoverCurso");
+const btnAdicionarNovoCursoAntes = document.getElementById("btnAdicionarNovoCursoAntes");
+const btnAdicionarNovoCursoDepois = document.getElementById("btnAdicionarNovoCursoDepois");
+const nomeCurso = document.getElementById("nomeCurso");
 
-cursos.map((elem, chave) => {
+
+
+let indice = 0;
+
+const criarNovoCurso = (curso) => {
     const novoElemento = document.createElement("div");
-    novoElemento.setAttribute("id", `c ${chave}`);
+    novoElemento.setAttribute("id", `c ${indice}`);
     novoElemento.setAttribute("class", "curso c1");
-    novoElemento.innerHTML = elem;
+    novoElemento.innerHTML = curso;
 
 
     const comandos = document.createElement("div");
@@ -22,8 +29,13 @@ cursos.map((elem, chave) => {
     comandos.appendChild(rb);
 
     novoElemento.appendChild(comandos);
+    return novoElemento
+}
 
+cursos.map((elem, chave) => {
+    const novoElemento = criarNovoCurso(elem)
     caixaCursos.appendChild(novoElemento);
+    indice++
 })
 
 const radioSelecionado = () => { // função para pegar o radio selecionado
@@ -34,8 +46,6 @@ const radioSelecionado = () => { // função para pegar o radio selecionado
     return radioSelecionado[0]
 }
 
-
-
 btnCursoSelecionado.addEventListener("click", (even) => {
     const rs = radioSelecionado()
     try { // so remove se for diferente de 
@@ -44,11 +54,8 @@ btnCursoSelecionado.addEventListener("click", (even) => {
     } catch (err) {
         alert("Selecione um curso");
     }
-
     // Opção 2
     //const cursoSelecionado = radioSelecionado.parentNode.parentNode.firstChild.textContent;
-
-
 })
 
 btnRemoverCurso.addEventListener("click", (evt) => {
@@ -57,6 +64,41 @@ btnRemoverCurso.addEventListener("click", (evt) => {
         const cursoSelecionado = rs.parentNode.parentNode;
         cursoSelecionado.remove(); // Função para remover o curso
     } else {
+        alert("Selecione um curso");
+    }
+})
+
+
+
+btnAdicionarNovoCursoAntes.addEventListener("click", () => {
+    const rs = radioSelecionado()
+    try {
+        if (nomeCurso.value != "") {
+            const cursoSelecionado = rs.parentNode.parentNode // Retorna a div completa
+            const novoCurso = criarNovoCurso(nomeCurso.value)
+            caixaCursos.insertBefore(novoCurso, cursoSelecionado)   //insertBefore(onde vai, oq vai)
+        } else {
+            alert("Digite o nome do Curso")
+        }
+    } catch (err) {
+        alert("Selecione um curso");
+    }
+})
+
+btnAdicionarNovoCursoDepois.addEventListener("click", () => {
+    // não existe um insertAfter, forma de resolver é pegar o proximo irmão do selecionado e 
+    // adicionar um insertBfore. ou seja depois do selecionado
+
+    const rs = radioSelecionado()
+    try {
+        if (nomeCurso.value != "") {
+            const cursoSelecionado = rs.parentNode.parentNode // Retorna a div completa
+            const novoCurso = criarNovoCurso(nomeCurso.value)
+            caixaCursos.insertBefore(novoCurso, cursoSelecionado.nextSibling)   //insertBefore()
+        } else {
+            alert("Digite o nome do Curso")
+        }
+    } catch (err) {
         alert("Selecione um curso");
     }
 })
