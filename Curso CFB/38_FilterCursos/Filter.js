@@ -3,6 +3,7 @@ const btn_c = [...document.querySelectorAll(".curso")];
 const c1_2 = document.querySelector("#c1_2");
 const cursos = ["HTML", "CSS", "Javascript", "PHP", "React", "MySQL", "ReactNative"]
 const btnCursoSelecionado = document.getElementById("btnCursoSelecionado")
+const btnRemoverCurso = document.getElementById("btnRemoverCurso");
 
 cursos.map((elem, chave) => {
     const novoElemento = document.createElement("div");
@@ -25,15 +26,47 @@ cursos.map((elem, chave) => {
     caixaCursos.appendChild(novoElemento);
 })
 
-btnCursoSelecionado.addEventListener("click", (Event) => {
-    const todosRadios = [...document.querySelectorAll("input[type=radio]")];
-
-    // Vamos filtrar
-    let radioSelecionado = todosRadios.filter((ele, ind, arr) => {
-        return ele.checked
+const radioSelecionado = () => { // função para pegar o radio selecionado
+    const todosRadios = [...document.querySelectorAll("input[type=radio]")];   // pegamos todos os inouts radios 
+    const radioSelecionado = todosRadios.filter((ele, ind, arr) => { // podemos usar apenas o que precisar
+        return ele.checked // retorna somente o selecionado
     })
-    radioSelecionado = radioSelecionado[0]
-    const cursoSelecionado = radioSelecionado.parentNode.parentNode
+    return radioSelecionado[0]
+}
 
-    console.log(radioSelecionado)
+
+
+btnCursoSelecionado.addEventListener("click", (even) => {
+    const rs = radioSelecionado()
+    try { // so remove se for diferente de 
+        const cursoSelecionado = rs.parentNode.previousSibling.textContent;
+        alert("Curso Selecionado " + cursoSelecionado);
+    } catch (err) {
+        alert("Selecione um curso");
+    }
+
+    // Opção 2
+    //const cursoSelecionado = radioSelecionado.parentNode.parentNode.firstChild.textContent;
+
+
 })
+
+btnRemoverCurso.addEventListener("click", (evt) => {
+    const rs = radioSelecionado();
+    if (rs != undefined) {
+        const cursoSelecionado = rs.parentNode.parentNode;
+        cursoSelecionado.remove(); // Função para remover o curso
+    } else {
+        alert("Selecione um curso");
+    }
+})
+
+
+
+
+//parentNode    Pai do elemento
+//childNodes[nodenumber]  Irmãos nodelist  
+//firstChild    Primeiro Filho
+//lastChild     Ultimo Filho
+//nextSibling   proximo irmão
+//previousSibling   irmão anterior
