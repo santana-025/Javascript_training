@@ -22,4 +22,4 @@ btnPesquisar.addEventListener("click", (evt) => {
 })
 // Para array de strings é a mesma coisa
 // porem usase o toupperCase ou tolowerCase = para que qualquer pesquisa ache o elemento 
-// if (elemento.toupperCase() == txt_pesquisar.value.toupperCase'()
+// if (elemento.toupperCase() == txt_pesquisar.value.toupperCase'()'
